@@ -1,4 +1,5 @@
 //=|*Imports*|=//
+import cors from "cors";
 import express from "express";
 import { apiRouter } from "./routes/api.router";
 
@@ -7,8 +8,10 @@ import { apiRouter } from "./routes/api.router";
 const app = express();
 
 
-//=|*Routes*|=//
+//=|*Uses*|=//
+app.use(cors());
 app.use(apiRouter);
+
 
 //=|*Exports*|=//=>server.ts
 export {app}
