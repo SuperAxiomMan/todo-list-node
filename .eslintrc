@@ -15,6 +15,9 @@
         "prettier"
     ],
     "rules": {
+        // "globals": {
+        //     "fetch": "false"
+        // },
         "no-console": "error",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-unsafe-call": "off",

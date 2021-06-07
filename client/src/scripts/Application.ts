@@ -1,10 +1,8 @@
 import Navigo from 'navigo';
 
-class Application {
+export class Application {
     classRouter: Navigo;
     constructor(paramRouter:Navigo){
         this.classRouter=paramRouter;
     }
 }
-
-export { Application };
