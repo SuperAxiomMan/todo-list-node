@@ -41,6 +41,7 @@ export class AddTodoController{
         console.log({title, description, category});
         if (apiCall) {
             frontRouter.navigate('/todos');
+            
         }else{
             console.log('api call failure');
         }
