@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { APIRest } from '../../services/apiRest';
+import { Views } from '../../services/Views';
 
 export class TodosControllerClient {
     todos: any;
@@ -17,7 +18,7 @@ export class TodosControllerClient {
         return async ({data}) => {
             // console.log(`params are : ${data.id}`);
             this.todo = await APIRest.getSingleTodo(data.id);
-
+            
             // console.log(this.todo); 
             this.renderView(this.todo);
         };
@@ -47,5 +48,6 @@ export class TodosControllerClient {
         }
         
         todosList.innerHTML = html;
+        Views.displayView('todos');
     }
 }

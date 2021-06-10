@@ -11,8 +11,8 @@ apiRouter.get('/', (req:Request, res:Response) => {
 
 //=|API Todo/=>
 apiRouter.get('/api/todo/v1', TodoController.findAll);
-apiRouter.post('/api/todo/v1/create', TodoController.create);
 apiRouter.get('/api/todo/v1/:id', TodoController.findOne);
+apiRouter.post('/api/todo/v1/create', TodoController.create);
 apiRouter.put('/api/todo/v1/:id', TodoController.update);
 apiRouter.delete('/api/todo/v1/:id', TodoController.delete);
 

@@ -33,11 +33,28 @@ export class APIRest {
             console.log(e);
         }
     };
+
+    static addTodo = async (values: { title: string; description: string; category: string; }) => {
+        try {
+            // console.log(JSON.stringify(values));
+            const options = {
+                method: 'POST',
+                body:JSON.stringify(values),
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            };
+            return APIRest.apiExecute('api/todo/v1/create', options);
+        } catch (e) {
+            console.log(e);
+        }
+    }
     
 
     static async apiExecute(path:string, options = {}) {
         try {
-            console.log('apiExecute !');
+            console.log(path);
             const rawRes = await fetch(`${this.baseURL}/${path}`, options);
             const jsonRes = await rawRes.json();
             return jsonRes;

@@ -1,6 +1,6 @@
 //=|*Imports*|=//
 import cors from 'cors';
-import express from 'express';
+import express, { json } from 'express';
 import { apiRouter } from './routes/api.router';
 
 
@@ -10,6 +10,7 @@ const app = express();
 
 //=|*Uses*|=//
 app.use(cors());//secure domain cross-origin
+app.use(json());
 app.use(apiRouter);
 
 

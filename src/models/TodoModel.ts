@@ -7,4 +7,6 @@ export class Todo {
     public title?: string;
     @prop()
     public description?: string;
+    @prop()
+    public category?: string;
 }

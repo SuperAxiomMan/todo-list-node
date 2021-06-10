@@ -18,7 +18,6 @@ export class TodoController {
 
     static create = async (req:Request, res:Response) => {
         return res.json(await TodoController.model.create(req.body));
-       
     }
     static update = async(req:Request, res:Response) => {
         const {id} = req.params;
