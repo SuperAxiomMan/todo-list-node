@@ -13,7 +13,6 @@ export class AddTodoController{
     }
 
     async renderView(){
-  
         const categorySelection = document.getElementById('category-select-list');
         categorySelection.innerHTML ='';
         const categories = (await APIRest.getAllCat()).categories;
@@ -26,18 +25,16 @@ export class AddTodoController{
         });
 
         Views.displayView('view-add-todo');
-        this.loadFormView();
+        this.addformListener();
  
     }
-    async loadFormView(){
 
-        
+    async addformListener(){
         this.addTodoForm = document.getElementById('addTodoForm') as HTMLFormElement;
-
         this.addTodoForm.addEventListener('submit', this.addTodo.bind(this));
         console.log('loaded form view');
- 
     }
+
     async addTodo(e){
         e.preventDefault();
         const {title, description, category} = this.addTodoForm.elements;

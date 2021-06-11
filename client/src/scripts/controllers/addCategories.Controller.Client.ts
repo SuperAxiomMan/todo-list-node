@@ -1,33 +1,24 @@
+/* eslint-disable no-console */
 import { APIRest } from '../../services/apiRest';
 import { Views } from '../../services/Views';
 import { frontRouter } from '../Router';
 
-/* eslint-disable no-console */
 export class AddCatController{
     addCatForm : HTMLFormElement;
     execute(){
-       
         return () => {
           this.renderView();
         };
     }
 
     async renderView(){
-  
-        // const categorySelection = document.getElementById('category');
-        // categorySelection.innerHTML ='Test Cat';
         Views.displayView('view-add-category');
-        this.loadFormView();
- 
+        this.addformListener();
     }
-    async loadFormView(){
 
-        
+    async addformListener(){
         this.addCatForm = document.getElementById('addCatForm') as HTMLFormElement;
-
         this.addCatForm.addEventListener('submit', this.addCat.bind(this));
-        console.log('loaded form view');
- 
     }
     async addCat(e){
         e.preventDefault();

@@ -5,7 +5,7 @@ import { TodoModel } from '../../../models/TodoModel';
 
 //=|*Exports*|=//=>app.router.ts
 export class TodoController {
-    static model = getModelForClass(TodoModel)
+    static model = getModelForClass(TodoModel);
 
     static findAll = async (req: Request, res: Response) => {
         return res.json({todos: await TodoController.model.find({})});

@@ -5,6 +5,7 @@ import { AddTodoController } from './controllers/AddTodo.Contoller.Client';
 import { AddCatController } from './controllers/addCategories.Controller.Client';
 import { TodosControllerClient } from './controllers/TodosControllerClient';
 import { CatControllerClient } from './controllers/Categories.Controller.Client';
+import { RegisterController } from './controllers/Register.Controller.Client';
 
 
 
@@ -21,6 +22,11 @@ frontRouter.on('/todos', new TodosControllerClient().execute());
 //Categories Router
 frontRouter.on('/categories', new CatControllerClient().execute());
 frontRouter.on('/categories/add', new AddCatController().execute());
+
+//User Router
+frontRouter.on('/register', new RegisterController().execute());
+
+
 
 frontRouter.resolve();
 export { frontRouter };

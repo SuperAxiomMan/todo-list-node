@@ -114,6 +114,23 @@ export class APIRest {
             console.log(e);
         }
     };
+
+
+    static addUser = async (values: { email: string; password: string;}) => {
+        try {
+            const options = {
+                method: 'POST',
+                body:JSON.stringify(values),
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            };
+            return APIRest.apiExecute('api/user/v1/create', options);
+        } catch (e) {
+            console.log(e);
+        }
+    }
     
 
     static async apiExecute(path:string, options = {}) {
