@@ -14,8 +14,17 @@ export class AddTodoController{
 
     async renderView(){
   
-        // const categorySelection = document.getElementById('category');
-        // categorySelection.innerHTML ='Test Cat';
+        const categorySelection = document.getElementById('category-select-list');
+        categorySelection.innerHTML ='';
+        const categories = (await APIRest.getAllCat()).categories;
+
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.text = category.title;
+            option.value = category._id;
+            categorySelection.add(option);
+        });
+
         Views.displayView('view-add-todo');
         this.loadFormView();
  
