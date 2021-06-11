@@ -7,21 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Home Page</title>
+    <title>Todo List with Node.js</title>
 </head>
 
 <body>
 
     <include src="./src/views/partials/nav.html"></include>
     <!-- todos view -->
-    <div id="todos">
+    <div class="container" id="view-todos-list">
         <include src="./src/views/todos.html">
     </div>
 
-    <!-- Create todo view -->
-    <div id="add_todo">
+    <!-- Add todo view -->
+    <div class="container" id="view-add-todo">
         <include src="./src/views/addTodo.html"></include>
     </div>
+
+    <!-- Categories View -->
+    <div class="container" id="view-categories-list">
+        <include src="./src/views/categories.html"></include>
+    </div>
+
+    <!-- Add Category View -->
+    <div class="container" id="view-add-category">
+        <include src="./src/views/addCat.html"></include>
+    </div>
+
+
+
 
     <script src="./scripts/index.ts"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

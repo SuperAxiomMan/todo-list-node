@@ -65,6 +65,55 @@ export class APIRest {
             console.log(e);
         }
     };
+
+
+    static getAllCat = () => {
+        try {
+            const options = {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            };
+            return APIRest.apiExecute('api/cat/v1', options);
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
+    static addCat = async (values: { title: string; description: string;}) => {
+        try {
+            const options = {
+                method: 'POST',
+                body:JSON.stringify(values),
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            };
+            return APIRest.apiExecute('api/cat/v1/create', options);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    
+    static deleteCat = (id:string) => {
+
+        try {
+            const options = {
+                method: 'DELETE',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            };
+            return APIRest.apiExecute(`api/cat/v1/${id}`, options);
+        } catch (e) {
+            console.log(e);
+        }
+    };
     
 
     static async apiExecute(path:string, options = {}) {

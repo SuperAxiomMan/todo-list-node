@@ -1,30 +1,27 @@
-<!-- <include src="./src/views/partials/nav.html"></include> -->
+<h4>Add a new Todo</h4>
 <form id="addTodoForm">
-    <div>
+    <div class="form-group">
         <label for="title">Name</label>
         <div>
-            <input type="text" name="title" id="title" placeholder="Todo Title">
+            <input class="form-control" type="text" name="title" id="title" placeholder="Todo Title">
         </div>
     </div>
-    <div>
+    <div class="form-group">
         <label for="description">Description</label>
         <div>
-            <textarea rows="8" name="description" id="description" placeholder="Add a description"></textarea>
+            <textarea class="form-control" rows="8" name="description" id="description"
+                placeholder="Add a description"></textarea>
         </div>
     </div>
     <div>
-        <div>
+        <div class="form-group">
             <label for="category">Category</label>
-            <select id="category" name="category">
+            <select class="form-control" id="category" name="category">
                 <option selected>House</option>
                 <option>Work</option>
                 <option>Sport</option>
             </select>
         </div>
-        <a href="#">
-            <button type="submit">
-                Save todo
-            </button>
-        </a>
+        <button type="submit" class="btn btn-primary mb-2">Save</button>
     </div>
 </form>

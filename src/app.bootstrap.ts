@@ -9,8 +9,8 @@ const app = express();
 
 
 //=|*Uses*|=//
-app.use(cors());//secure domain cross-origin
-app.use(json());
+app.use(cors()); //secure domain cross-origin
+app.use(json()); //use for body JSON POST
 app.use(apiRouter);
 
 

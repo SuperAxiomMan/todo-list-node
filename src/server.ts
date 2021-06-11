@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-expressions */
 //=|*Imports*|=//
 import { config } from 'dotenv';
 import { app } from './app.bootstrap';
@@ -12,7 +14,7 @@ const init = async () => {
     const db = await DBConnector.initDB();
     db
     ?app.listen(process.env.PORT, () => {console.log(`server is running on http://localhost:${process.env.PORT}`);})
-    :console.log("Error on DB connection")
+    :console.log('Error on DB connection');
 
 };
 
