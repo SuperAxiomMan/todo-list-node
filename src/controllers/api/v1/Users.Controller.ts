@@ -15,7 +15,7 @@ export class UsersController{
     }
 
     static create = async (req:Request, res:Response) => {
-        console.log(JSON.stringify(req.body));
+        // console.log(JSON.stringify(req.body));
         return res.json(await UsersController.model.register(req.body, req.body.password));
     }
     static update = async(req:Request, res:Response) => {

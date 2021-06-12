@@ -131,11 +131,27 @@ export class APIRest {
             console.log(e);
         }
     }
+
+    static logUser = async (values: { email: string; password: string;}) => {
+        try {
+            const options = {
+                method: 'POST',
+                body:JSON.stringify(values),
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            };
+            return APIRest.apiExecute('api/login/v1/', options);
+        } catch (e) {
+            console.log(e);
+        }
+    }
     
 
     static async apiExecute(path:string, options = {}) {
         try {
-            console.log(path);
+            // console.log(path);
             const rawRes = await fetch(`${this.baseURL}/${path}`, options);
             const jsonRes = await rawRes.json();
             return jsonRes;

@@ -6,7 +6,7 @@ const usersRouter = Router();
 
 
 
-//=|API Todo/=>
+//=|API User/=>
 usersRouter.get('/api/user/v1', UsersController.findAll);
 usersRouter.post('/api/user/v1/create', UsersController.create);
 usersRouter.get('/api/user/v1/:id', UsersController.findOne);
